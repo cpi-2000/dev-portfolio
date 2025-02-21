@@ -9,6 +9,9 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { lightTheme } from "../theme/lightTheme"; 
 import { darkTheme } from "../theme/darkTheme";
+import About from "../pages/About";
+import Experience from "../pages/Experience";
+import Projects from "../pages/Projects";
 
 const Layout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -57,7 +60,10 @@ const Layout = () => {
             {activeTab}
           </Text>
           <Text color={themeColors.textSecondary}>
-            // This is the content for {activeTab}
+          {activeTab === 'ABOUT' && <About colorMode={colorMode} />}
+          {activeTab === 'EXPERIENCE' && <Experience colorMode={colorMode} />}
+          {activeTab === 'PROJECTS' && <Projects colorMode={colorMode} />}
+
           </Text>
         </Box>
         <Outlet />
