@@ -2,17 +2,13 @@ import {
   Box,
   Card,
   CardBody,
-  CardHeader,
   Flex,
-  HStack,
-  Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
 import { darkTheme } from "../theme/darkTheme";
 import { lightTheme } from "../theme/lightTheme";
-import { formatTimestamp } from "../utils/utility";
 
 interface colorModeProps {
   colorMode: "light" | "dark";
@@ -21,7 +17,6 @@ interface colorModeProps {
 const Experience: React.FC<colorModeProps> = ({ colorMode }) => {
   const themeColors =
     colorMode === "dark" ? darkTheme.colors : lightTheme.colors;
-  const dateToday = formatTimestamp(new Date());
 
   return (
     <div>
